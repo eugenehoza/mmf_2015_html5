@@ -1,0 +1,22 @@
+div {
+    color: #0000FF;
+}
+
+#div3 {
+  color: green;
+}
+
+.myClass {
+  border: 1px solid red;
+  background: rgb(255,100,20);
+  display:inline-block;
+  border-bottom-right-radius: 5px;
+  border-bottom-color: green;
+  border-top-left-radius: 2px;
+  border-right : 3px solid blue;
+
+  padding-right: 10px;
+  margin-top: 15px;
+  padding: 2px;
+  margin: 3px;
+}

@@ -1,0 +1,172 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			TITLE
+		</title>
+		<style type="text/css">
+			*
+			{
+				font-family:verdana;
+			}
+			.block1   
+			{
+				width:1250px;
+				height:120px;
+				margin:0 auto;
+				margin-top: 200px;
+				background:#f2e4b2;
+			}
+			
+			.block11, .block12, .block13 
+			{
+				width:100px;
+				height:100px;
+				font-size: 15px; 
+				font-family: Arial, Helvetica, sans-serif; 
+				background:#67afeb;
+				color: #ffffff;
+				text-align: center;
+				position:relative;
+			}
+			.block11
+			{margin-left:0; margin-top:0px; padding-top: 20px;}
+			.block12
+			{margin-left:100px; margin-top:-120px; padding-top: 20px;}
+			.block13
+			{margin-left:200px; margin-top:-120px; padding-top: 20px;}
+
+			.transition
+			{
+				-o-transition: 0.3s;
+				-webkit-transition: 0.3s; 
+				transition: 0.3s; 
+			}
+			.transition:hover
+			{
+				-o-transition: 0.3s;
+				-webkit-transition: 0.3s; 
+				transition: 0.3s; 
+				background: #9ec7e8; 
+				-o-transform: scale(1.2);
+				-webkit-transform: scale(1.2);
+				transform: scale(1.2);
+				box-shadow: 0 0 13px 1px #777777;
+				z-index:1;
+			}
+			
+			#idblock
+			{
+				width:100px;
+				height:100px;
+				font-size: 15px; 
+				padding-top: 20px;
+				font-family: Arial, Helvetica, sans-serif; 
+				background: #f42727;
+				text-align: center;
+				color: #ffffff;
+				position:relative;
+				margin-left:300px; 
+				margin-top:-120px;
+			}
+			.block2
+			{
+				width:850px;
+				height:100px;
+				font-size: 15px; 
+				padding-top: 20px;
+				text-align: center;
+				position:relative;
+				margin-left:400px; 
+				margin-top:-120px;
+			}
+			p
+			{
+				font-size: 10px; 
+				color: #d0d0d0;
+				font-family: Arial, Helvetica, sans-serif; 
+			}
+			p~div 
+			{
+				font-size:1.4em;
+				color:#FF0000;
+				text-decoration:underline;
+			}
+			p:before
+			{
+				content:'- ';
+				font-weight:bold;
+			} 
+			p:after
+			{
+				content:' -';
+			} 
+			div:first-of-type 
+			{
+				color:#f42727;
+			}
+			div:empty 
+			{
+				width:300px;
+				height:10px;
+				background-color:#67afeb;
+				margin: 0 auto; 
+			}
+			
+			
+			.block3
+			{
+				width:400px;
+				height:200px;
+				margin:0 auto;
+				margin-top: 200px;
+				background:#f2e4b2;
+				padding: 40px;
+				text-align: center;
+			}
+			a:link
+			{
+				text-decoration:none;
+				font-family:verdana;
+			} 
+			a:visited
+			{
+				text-decoration:none;
+				font-family:verdana;
+			}
+			a:hover
+			{
+				text-decoration:underline;
+				font-family:verdana;
+			}
+			a:active
+			{
+				text-decoration:none;
+				font-family:verdana;
+			}
+			[href='http://www.tut.by']
+			{
+				font-size: 40px;
+				background-color:#67afeb;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="block1">
+		
+		 	<div class="block11 transition">CLASS with HOVER<p>ELEMENT SELECTOR</p></div>
+			<div class="block12 transition">CLASS with HOVER<p>ELEMENT SELECTOR</p></div>
+			<div class="block13 transition">CLASS with HOVER<p>ELEMENT SELECTOR</p></div>
+			<div id="idblock"><p>ID BLOCK</p></div>
+			<div class="block2"><p>DIFF TEXT</p><div>TEXT WITH STYLE BEFORE P</div><div></div></div>
+			
+			<div class="block3">
+				<a href='http://www.tut.by'>TUT.BY</a>
+				<a href='http://www.yandex.by'>YANDEX.BY</a>
+			</div>
+		</div>
+
+	</body>
+</html>
