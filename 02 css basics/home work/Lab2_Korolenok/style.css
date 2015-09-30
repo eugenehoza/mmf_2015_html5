@@ -1,0 +1,38 @@
+#id1{
+  color:green;
+}
+.class1{
+  color:red;
+}
+p{
+  font-family:verdana;
+}
+p[id='id2']{
+  color:black;
+}
+*{
+  font-size:1.2em; <!--Для всех элементов на странице-->
+}
+
+a:hover
+{
+ text-decoration:underline;
+}
+a:active
+{
+ text-decoration:none;
+}
+
+div p{
+  color:brown;
+}
+div+p{
+  color:pink;
+}
+[src$=".jpg"] {
+border:10px #FF0000 solid;
+}
+[href^='http'] {
+font-size:1.5em;
+color:red;
+}
