@@ -1,0 +1,85 @@
+[width]{
+border-color:green;
+border-style:solid;
+border-width:3px;
+}
+
+a:link{
+	font-size: 30px
+	text-decoration:none;
+}
+
+[href="http://tut.by"]{
+	color: green;
+}
+
+a:hover{
+	font-family:verdana;
+}
+
+
+#m2 {
+    border-color:blue;
+	border-style:solid;
+	border-width:9px;
+}
+
+.m3{
+	color: yellow;
+	font-size: 120%;
+}
+
+div:nth-child(2){
+margin-left:220px;
+
+}
+
+div p{
+color:red;
+background-color: green;
+font-family:verdana;
+font-size:1em;
+}
+
+div+p{
+text-decoration:underline;
+color:gold;
+font-size:1.8em;
+}
+
+h2.m3{
+	color: green;
+	font-size: 170%;
+}
+
+h3::selection {
+	 color: #ff0;
+	 background: #000;
+	}
+	.white{
+		background-color: pink;
+	}
+
+div:first-child{
+	color: pink;
+}
+
+div:last-child{
+	background-color: #0f0;
+}
+
+
+div p{
+
+	font: Arial;
+}
+
+p:before{
+	content: '((((((';
+
+}
+
+p:after{
+	content: '))))))';
+
+}

@@ -1,0 +1,33 @@
+Что такое Node.js
+Что значит запись var http = require('http');
+Как запустить javscritp через Nodejs
+Назвать любой плагин для создания простейшего веб сервера?
+Каким плагином обеспечить динамическую перекомпиляцию исходников при изменении?
+Перечислить базовые модули Node.js из API (мин 5)
+Какие функции обеспечивает модуль fs?
+Какие функции обеспечивает модуль http?
+Какие функции обеспечивает модуль https?
+Какие функции обеспечивает модуль zlib?
+Описание функции fs.open(path, flags, [mode], callback)
+Описание функции fs.mkdir(path, [mode], callback)
+Описание функции fs.read(fd, buffer, offset, length, position, callback)
+Описание функции fs.unlink(path, callback)
+Описание функции fs.appendFile(filename, data, [options], callback)
+Описание функции fs.exists(path, callback)
+Отличие функций fs.unlink и fs.unlinkSync
+Как создать HTTP сервер при помощи var http = require('http');?
+Как создать HTTPS сервер при помощи var http = require('https');?
+Как удалить файл при помощи var fs = require('fs');?
+Как создать файл при помощи var fs = require('fs');?
+Как записать в файл при помощи var fs = require('fs');?
+Как переимеовать файл при помощи var fs = require('fs');?
+Как узнать список файлов в директории при помощи var fs = require('fs');?
+Как создать HTTP сервер (порт 8089) при помощи var http = require('http');?
+Как создать HTTP сервер (порт 80) при помощи var http = require('http');?
+Как создать HTTP сервер (порт 1111) при помощи var http = require('http');?
+Как в HTTP ответ записать заголовок?
+Как в HTTP ответ записать данные?
+Чем request.end отличается от request.write?
+Как доступиться к заголовкам запроса?
+Как доступиться к телу запроса?
+Какой сайт является официальным для node.js :)?

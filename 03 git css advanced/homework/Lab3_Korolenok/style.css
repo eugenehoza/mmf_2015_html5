@@ -1,0 +1,69 @@
+html, body {
+  margin:0px; padding:0px;
+}
+
+.horizontal_dotted_line {
+    border: 3px;
+    padding-top: 8px;
+    border-bottom: #cccccc dotted;
+}
+
+table.main{
+  width: 629px; height: 236px;
+}
+
+td.pic1{
+  padding-top: 19px;
+  padding-left: 8px;
+}
+
+td.pic2{
+  padding-top: 19px;
+  padding-left: 16px;
+}
+
+td{
+  vertical-align: top;
+}
+
+td.text1{
+  padding-left: 10px;
+  padding-top: 11px;
+  font-size: 20px;
+  font-family: Gisha;
+}
+
+div.textintext1{
+  color: #5a5a7a;
+  padding-top: 5px;
+  font-size: 12px;
+  font-family: Calibri;
+  line-height: 1.7;
+}
+
+.butm{
+  font-size: 14px;
+  font-family: Gisha;
+  color: #F68645;
+  padding-top: 15px;
+}
+
+.textbutm{
+  font-size: 12px;
+}
+
+td.text2{
+  padding-left: 23px;
+  padding-top: 11px;
+  font-size: 20px;
+  font-family: Gisha;
+}
+
+a:link{
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+  color: #F68645;
+}
