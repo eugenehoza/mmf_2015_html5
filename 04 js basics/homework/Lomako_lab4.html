@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Lab_3</title>
+    <link rel="stylesheet" href="master.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+      <script type="text/javascript">
+      Number.prototype.toDigits = function() {
+         var str = this.toString(), tmp = '', i, d,
+         x = str.match(/^(\d+)\.(\d+)[eE]([-+]?)(\d+)$/);
+         if(x) {
+           d = x[2];
+           i = (x[3] == '-') ? x[4]-1 : x[4]-d.length;
+           while(i--) {
+             tmp += '0';
+           }
+           if(x[3] == '-') {
+             return '0.'+tmp+x[1]+d;
+           }
+           return x[1]+d+tmp;
+         }
+         return str;
+       };
+       console.log("---------------------  +  -------------------------------");
+       console.log(Math.pow(2, 1000)+Math.pow(3, 1001).toDigits());
+       console.log("---------------------  -  -------------------------------");
+       console.log(Math.pow(214748398, 2)-Math.pow(214799648, 3).toDigits());
+       console.log("---------------------  *  -------------------------------");
+       console.log(Math.pow(214748398, 2)*Math.pow(214799648, 3).toDigits());
+       console.log("---------------------  /  -------------------------------");
+       console.log(Math.pow(214748398, 2)/Math.pow(214799648, 3).toDigits());
+
+      </script>
+
+  </body>
+</html>
