@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>db example</title>
+    <script charset="utf-8">
+      var db = openDatabase("myDb", "1.0", "Test database",
+        2 * 1024 * 1024);
+      // create tables
+      db.transaction(function (tx) {
+         tx.executeSql('DROP TABLE MY_DATA;');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS MY_DATA (id unique, value);');
+         tx.executeSql('INSERT INTO MY_DATA (id, value) VALUES (1, "Hello world");');
+         //tx.executeSql('DROP TABLE MY_DATA2;');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS MY_DATA2 (id unique, value);');
+         tx.executeSql('INSERT INTO MY_DATA2 (id, value) VALUES (1, "Hello world2");');
+      });
+
+      // select example
+      var showData = function(res){
+        var print = function(res){
+          var msg = "";
+          for (var i = 0; i < res.rows.length; i++) {
+            msg += "<li> id: " + res.rows.item(i).id + ", value: "+res.rows.item(i).value + "</li>";
+          }
+          var elem = document.getElementById("dataOutput");
+          elem.innerHTML = msg;
+        };
+        if (!res){
+          db.transaction(function (tx){
+            tx.executeSql('SELECT * FROM MY_DATA', [], function (tx, results) {
+              console.log("result rows size: " + results.rows.length);
+              print(results);
+            });
+          });
+        } else {
+          print(res);
+        }
+      };
+
+      showData();
+
+      // crud operations: create, update, delete
+      this.CrudManager = function(){
+        this.addData = function (id, value){
+          db.transaction(function(tx){
+            tx.executeSql("insert into my_data values(?, ?)", [id, value],
+              function(){}, function(tx, e){alert(e.message);});
+          });
+        };
+        this.executeSql = function(query, callback){
+          db.readTransaction(function(tx){
+            tx.executeSql(query,[], callback);
+          });
+        };
+      };
+
+      var crudManager = new CrudManager();
+
+      this.DataHelper = function(){
+        this.addData = function(){
+          var id = document.getElementById("id");
+          var value = document.getElementById("value");
+          if (id.value && value.value){
+            crudManager.addData(id.value, value.value);
+            showData();
+          } else {
+            alert("id or value is not defined!");
+          }
+        };
+        this.executeSql = function(){
+          var query = document.getElementById("sqlQuery");
+          if (!query){
+            alert("query is null!");
+            return;
+          }
+          crudManager.executeSql(query.value, function(tx, res){
+            showData(res);
+          });
+        };
+      };
+
+      var dataHelper = new DataHelper();
+    </script>
+  </head>
+  <body>
+    <input type="field" id="id" name="id" value="" placeholder="id">
+    <input type="field" id="value" name="value" value="" placeholder="value">
+    <input type="button" name="add" value="ADD"
+      onclick="dataHelper.addData();">
+    <br>
+    <input type="field" size="47" id="sqlQuery" name="value" value="" placeholder="request here">
+    <input type="button" name="add" value="EXECUTE"
+      onclick="dataHelper.executeSql();">
+    <br>
+    result:
+    <br>
+    <ul id="dataOutput">
+    </ul>
+  </body>
+</html>
