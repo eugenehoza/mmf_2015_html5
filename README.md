@@ -1,3 +1,3 @@
-# пары 24.09.2015 будут! 
+# пары 08.10.2015 не будут! 
 Hello world. This is repository for HTML cource
 
