@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+  </head>
+  <body>
+    <h1>{{title}} HELLO</h1>
+    <ul>
+    <template repeat="{{action in actions}}">
+      <li><a href="/action/{{action.name}}">{{action.descr}}</a></li>
+    </template>
+    </ul>
+  </body>
+</html>
