@@ -85,6 +85,17 @@ app.get("/css/foundation.css", function(req,res){
   res.end();
 })
 
+app.get("/time", function(req,res){
+  console.log("return current time");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.send(new Date().toLocaleTimeString());
+})
+
+app.get("/random", function(req,res){
+  console.log("return random number");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.send("random number: "+(Math.random()*10));
+})
 
 var server = app.listen(8081, function () {
 
