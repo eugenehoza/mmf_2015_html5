@@ -1,6 +1,6 @@
 Hello world. This is repository for HTML cource
 
-Задачи см. во вкладке Issues
+Задачи см. во вкладке Issues (добавлена задача по канвасу)
 
 Вопросы к зачетам см. в папки questions
 
