@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 10</title>
+  </head>
+  <body>
+    <canvas id="jump" width="500" height="500" style="border: 1px solid">
+	  </canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var ctx = jump.getContext("2d");
+        var CentrX = 250;
+        var CentrY = 470;
+        var Radius = 30;
+
+        function circle() {
+          ctx.clearRect(0, 0, jump.width, jump.height);
+          ctx.beginPath();
+          ctx.arc(CentrX, CentrY , Radius, 0, 2*Math.PI, false);
+          ctx.lineWidth = 3;
+          ctx.stroke();
+        }
+        circle();
+
+        function bounce() {
+          var j=2;
+          var y=5;
+          var count=0;
+          for (var i=1; i<4000; i+=j, count++) {
+            setTimeout(function() {
+              CentrY-=y;
+              circle();
+            },i);
+            if(i<=2000) j+=2;
+            else {j+=8; y=8}
+          }
+          var k=j;
+          for (var i=5000; count!=0; i+=k, count--) {
+            setTimeout(function() {
+              CentrY+=y;
+              circle();
+            },i);
+            if(i<=7000) k-=2;
+            else {k-=8; y=5}
+          }
+        }
+
+        window.onkeyup = function(e){
+          var k = e.keyCode;
+          if(k == 32) {
+            bounce();
+          }
+        }
+    </script>
+  </body>
+</html>
