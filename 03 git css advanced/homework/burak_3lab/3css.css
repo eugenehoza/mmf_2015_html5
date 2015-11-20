@@ -1,0 +1,35 @@
+*{
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.maindiv{
+	background-color: #cccccc;
+	color: #ffffff;
+	font-family:Arial;
+	width: 590px;
+	height: 210px;
+	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 8px;
+	margin-top: 9px;
+}
+
+.line{
+	background-color: #d3bbbb;
+	width: 572px;
+	height: 2px;
+	margin:0 auto;
+	margin-left: 0px;
+	margin-top: 1px;
+}
+
+.pixel{
+	background-color: #d3bbbb;
+	width: 1px;
+	height: 1px;
+	margin:0 auto;
+	margin-top: -4px;
+	margin-left: -10px;
+}
+
