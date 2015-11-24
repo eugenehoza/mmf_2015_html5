@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>client js basics</title>
+  </head>
+  <body>
+
+    <div id="myDiv">
+      hello div
+    </div>
+
+    <script charset="utf-8">
+      var div = document.getElementById("myDiv");
+      div.innerText = "text changed";
+
+      var div2 = document.createElement("div");
+      div2.innerText = "div2 innert text";
+      div.appendChild(div2);
+
+      setInterval(function(){
+          div2.setAttribute("style", "color:"+"#"+((1<<24)*Math.random()|0).toString(16));
+      }, 1000);
+
+      setInterval(function(){
+          var request = new XMLHttpRequest();
+          request.open("GET", "http://localhost:8081/time", true);
+
+          request.onreadystatechange = function() {
+            if (request.status == 200) {
+                div2.innerText = request.responseText;
+              }
+          }
+          request.send();
+      }, 2000);
+
+
+
+
+    </script>
+
+  </body>
+</html>

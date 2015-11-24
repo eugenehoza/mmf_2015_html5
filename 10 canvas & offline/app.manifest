@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 2010-06-18:v3
+
+# Explicitly cached 'master entries'.
+CACHE:
+off.html
+
+
+
+# Resources that require the user to be online.
+NETWORK:
+*

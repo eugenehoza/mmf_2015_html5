@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>hello</title>
+  </head>
+  <body>
+
+  <div id="myDiv">
+    I am div!
+  </div>
+
+    <script charset="utf-8">
+      // init
+      var myDiv = document.getElementById("myDiv");
+      myDiv.innerHTML = "Text <div id='innerDiv'> Inner div </div>";
+
+      // attributes
+      myDiv.setAttribute("abc", "def");
+
+      // change color
+
+      var innerDiv = document.getElementById("innerDiv");
+      innerDiv.setAttribute("style", "color:red");
+
+
+      //interval
+      setInterval(function(){
+           innerDiv.setAttribute("style", "color:"+"#"+((1<<24)*Math.random()|0).toString(16));
+       }, 1000);
+
+      // setTimeout(function(){
+      //     innerDiv.setAttribute("style", "color:"+"#"+((1<<24)*Math.random()|0).toString(16));
+      // }, 2000);
+      //interval
+      setInterval(function(){
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://localhost:8081/random", true);
+
+        request.onreadystatechange = function() {
+          if (request.status == 200) {
+              innerDiv.innerText = request.responseText;
+            }
+        }
+        request.send();
+      }, 300
+      );
+
+
+    </script>
+
+
+
+  </body>
+</html>

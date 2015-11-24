@@ -1,0 +1,41 @@
+.r1 {
+  color: #c50000;
+  font-size: 11px;
+  position: relative;
+}
+.r7 {
+  padding-left: 60px;
+
+}
+.r5 {
+  border: 1px solid #cecece;
+  padding: 1px;
+  height: 140px;
+  width: 280px;
+  background: -webkit-radial-gradient(90px 90px, circle cover,white,#ededed);
+  border-top-left-radius: 13px;
+}
+
+.r2 {
+  position: absolute;
+  left: 19px;
+  top: 33px;
+}
+.r3 {
+  color: #d24d00;
+  padding-left: 30px;
+}
+.r4 {
+  color: black;
+  padding-left: 126px;
+  padding-bottom: 1px;
+  Font-size: 11px;
+}
+.r8 {
+  padding-left: 8px;
+  padding-bottom: 2px;
+}
+.r6 {
+  padding-left: 11px;
+  padding-top: 4px;
+}
