@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Korolenok Lab 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    function algoritm(start,n,m) {
+      var dugi=[];
+      var min=Infinity;
+      var metki=[];
+      for (var i = 0; i < m; i++) {
+        dugi[i]={};
+      }
+      dugi[0].beg=1;  //начало дуги
+      dugi[0].end=0;  //конец дуги
+      dugi[0].ves=1;  //вес дуги
+
+      dugi[1].beg=1;
+      dugi[1].end=2;
+      dugi[1].ves=1;
+
+      dugi[2].beg=0;
+      dugi[2].end=2;
+      dugi[2].ves=3;
+
+      dugi[3].beg=1;
+      dugi[3].end=3;
+      dugi[3].ves=4;
+
+      dugi[4].beg=2;
+      dugi[4].end=3;
+      dugi[4].ves=2;
+
+      dugi[5].beg=0;
+      dugi[5].end=4;
+      dugi[5].ves=1;
+
+      dugi[6].beg=0;
+      dugi[6].end=6;
+      dugi[6].ves=4;
+
+      dugi[7].beg=6;
+      dugi[7].end=5;
+      dugi[7].ves=1;
+
+      dugi[8].beg=4;
+      dugi[8].end=6;
+      dugi[8].ves=2;
+
+      dugi[9].beg=4;
+      dugi[9].end=5;
+      dugi[9].ves=1;
+
+      dugi[10].beg=2;
+      dugi[10].end=4;
+      dugi[10].ves=4;
+      setmet(metki,start,n);
+      for(var q=0; q<n-1; q++){
+        for(var k=0; k<n; k++){
+          if(metki[k].pos==1 && metki[k].prosm==0){
+            newmetki(k,m,dugi,metki);
+            metki[k].prosm=1;
+            minmetka(n,metki);
+            break;
+          }
+        }
+      }
+      results(start,n,metki);
+    };
+
+    function setmet(arr,start,n){   //расставляем метки вершинам графа
+      for (var i = 0; i < n; i++) {
+        arr[i]={};
+        if (i==start) {
+          arr[i].znach=0;
+          arr[i].pos=1;
+        }
+        else {
+          arr[i].znach=Infinity;
+          arr[i].pos=0;
+        }
+        arr[i].prosm=0;
+      }
+    }
+
+    function minmetka(n,metki){  //нахождение минимальной метки среди временных и замена их на постоянные
+      var metkamin=Infinity;
+      for(var j=0; j<n; j++){
+        if(metki[j].znach<metkamin && metki[j].prosm==0){
+          metkamin=metki[j].znach;
+        }
+      }
+      for(var i=0; i<n; i++){
+        if(metki[i].znach==metkamin && metki[i].pos==0){
+          metki[i].pos=1;
+        }
+      }
+    }
+
+    function newmetki(versh,m,dugi,metki){   //рассматривание вершины c минимальной меткой и расставление новых меток
+      for(var i=0; i<m; i++){
+       if(dugi[i].beg==versh){
+         var novmetka=metki[dugi[i].beg].znach+dugi[i].ves;
+         var starmetka=metki[dugi[i].end].znach;
+         if(novmetka<starmetka){
+           metki[dugi[i].end].znach=metki[dugi[i].beg].znach+dugi[i].ves;
+         }
+       }
+       if(dugi[i].end==versh){
+         var novmetka=metki[dugi[i].end].znach+dugi[i].ves;
+         var starmetka=metki[dugi[i].beg].znach;
+         if(novmetka<starmetka){
+           metki[dugi[i].beg].znach=metki[dugi[i].end].znach+dugi[i].ves;
+         }
+       }
+     }
+    }
+
+    function results(start,n,metki){
+      for(var i=0; i<n; i++){
+        console.log("расстояние между вершиной "+start+" и вершиной "+i+" = "+metki[i].znach);
+      }
+    }
+
+    algoritm(1,7,11);
+
+    </script>
+  </body>
+</html>
