@@ -36,7 +36,7 @@ for(var cfg in configArray){
     }
     uniqueIds.push(rowNum);
     resultArr.push("\t"+num+" " + questArray[rowNum]);
-    resultArr.push("\n\n\n");
+    resultArr.push("\n\n");
     num++;
   }
   console.log("questions "+uniqueIds.join());
