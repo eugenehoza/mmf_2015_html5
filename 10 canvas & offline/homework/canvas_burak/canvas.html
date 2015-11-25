@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+    <script charset = "utf-8">
+      var canvas;
+      var context;
+      var width = 150;
+      var length = 60;
+      var x = 30;
+      var y = 90;
+      var moving = 1;
+      window.onload = function()
+      {
+         canvas = document.getElementById("canvasexample");
+         context = canvas.getContext("2d");
+         drawFrame();
+      }
+      function drawFrame()
+      {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.lineWidth = 1;
+        context.strokeStyle = 'rgb(75,120,135)';
+        context.beginPath();
+        context.rect(x, y, width, width);
+        context.lineTo(x + length, y - length);
+        context.lineTo(x + width + length, y - length);
+        context.lineTo(x + width + length, y - length + width);
+        context.lineTo(x + width, y + width);
+        context.moveTo(x + width, y);
+        context.lineTo(x + width + length, y - length);
+        context.stroke();
+        setTimeout("drawFrame()", 5);
+      }
+      document.onkeydown = function checkKeycode(event)
+      {
+          var button;
+          if(!event) var event = window.event;
+          else if(event.which) button = event.which;
+          if(button == 37){x -= moving}
+          if(button == 38){y -= moving}
+          if(button == 39){x += moving}
+          if(button == 40){y += moving}
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="canvasexample" width="600" height="600" style="background: rgb(210,225,230)">
+      <p>No canvas support</p>
+	  </canvas>
+  </body>
+</html>
