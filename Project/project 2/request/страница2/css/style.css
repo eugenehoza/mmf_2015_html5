@@ -1,0 +1,47 @@
+form{
+	margin-left: 20px;
+	display: inline-block;
+}
+.task{
+	width: 150px;
+}
+li{
+	width: 90px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid;
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+.a{
+	margin-left: 20px;
+}
+.a ul{
+	margin-left: -40px;
+}
+.a p{
+	width: 90px;
+	text-align: center;
+	margin-top: -40px;
+	margin-left: 20px;
+	position: absolute;
+}
+.a div{
+	margin-top: 40px;
+}
+div a{
+	border: 1px solid;
+	padding: 2px;
+
+	margin-left: 15px;
+}
+.b{
+	border: 1px solid;
+	width: 1100px;
+	height: 600px;
+	position: relative;
+	margin-left: 200px;
+	margin-top: -235px;
+}

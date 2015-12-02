@@ -1,0 +1,172 @@
+h1{
+	width: 100px;
+	text-align: center;
+}
+body{
+	margin-left:0px;
+}
+form div ul{
+	display: none;
+}
+.k{
+	margin-top: -20px;
+}
+
+.di{
+	margin-top: 20px;
+	border: 1px solid;
+	display: none;
+	width: 40px;
+	height: 50px;
+}
+
+.tt{
+	margin-left: 40px;
+}
+header form{
+	margin-top: -50px;
+	margin-left: 300px;
+	width: 400px;
+}
+.search{
+	width: 300px;
+	margin-left: 60px;
+	margin-bottom: -75px;
+	position: relative;
+}
+li{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+.np{
+	background-color: gray;
+	color: white;
+	padding: 7px;
+	border-radius: 3px;
+}
+.a{
+	margin-top: 65px;
+	position: relative;
+	width: 200px;
+}
+.a li{
+	margin-top: 10px;
+}
+.b{
+	margin-left: 275px;
+	margin-top: -160px;
+	width: 1030px;
+	position: relative;
+        border: 1px solid;
+	padding: 20px;
+}
+.b div{
+	display: inline-block;
+	padding: 2px;
+}
+.ss{
+	width: 250px;
+}
+.b li{
+	display: inline-block;
+	margin-left:40px;
+	vertical-align: bottom;
+}
+.cont{
+	width: 1024px;
+	height: 200px;
+}
+.cont div{
+	border:1px solid;
+	width:1000px;
+	height:50px;
+}
+
+.t1 ul{
+	margin-top: -10px;
+	margin-left: -80px;
+}
+.tcal{
+	width: 0px;
+}
+.f{
+	width: 20px;
+	margin-top: -30px;
+	border-right: 1px solid;
+	height:55px;
+	text-align: center;
+}
+.f1{
+	width: 100px;
+	margin-top: -20px;
+	border-right: 1px solid;
+	height:55px;
+	text-align: center;
+}
+.f2{
+	width:450px;
+	border-right: 1px solid;
+	height:55px;
+	margin-top: 8px;
+	text-align: center;
+
+}
+.f3{
+	width: 100px;
+	margin-top: -30px;
+	border-right: 1px solid;
+	height:55px;
+	text-align: center;
+
+}
+.f4{
+	width: 50px;
+	margin-top: -30px;
+		height:55px;
+	text-align: center;
+}
+.f5{
+	position:absolute;
+	width: 80px;
+	margin-top: 20px;
+	margin-left: auto;
+	height:55px;
+	text-align: center;
+}
+.r{
+	width: 20px;
+	border-right: 1px solid;
+	height:55px;
+	text-align: center;
+}
+.r1{
+	width:500px;
+	border-right: 1px solid;
+	height:55px;
+	text-align: center;
+}
+.r2{
+		width: 195px;
+		height:55px;
+		border-right: 1px solid;
+	text-align: center;
+}
+.r3{
+	width: 50px;
+		height:55px;
+	text-align: center;
+	
+}
+.r4{
+	position: absolute;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+.t2 ul{
+	margin-top: -2px;
+	margin-left: -80px;
+}
+
+
