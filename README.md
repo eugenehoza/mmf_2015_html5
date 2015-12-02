@@ -1,5 +1,7 @@
 Hello world. This is repository for HTML cource
 
+В случае проблем с репозиторием можете искать меня в скайпе evergreen_gozaevgeny
+
 Задачи см. во вкладке Issues (добавлена задача по канвасу)
 
 Вопросы к зачетам см. в папки questions
