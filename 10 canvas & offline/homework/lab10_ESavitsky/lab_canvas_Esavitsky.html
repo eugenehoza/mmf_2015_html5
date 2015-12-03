@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Как нарисовать линию в HTML5 (Canvas)</title>
+<script>
+
+function line()
+{
+    var canvas = document.getElementById('line');
+    var obCanvas = canvas.getContext('2d');
+    
+    obCanvas.beginPath();
+    obCanvas.lineWidth = 2;
+    obCanvas.strokeStyle = 'red';
+    obCanvas.moveTo(10, 10);
+    obCanvas.lineTo(290, 140);
+    obCanvas.stroke();
+	
+	obCanvas.beginPath();
+    obCanvas.arc(150, 75, 50, 0, 2*Math.PI, false);
+    obCanvas.fillStyle = 'red';
+    obCanvas.fill();
+    obCanvas.lineWidth = 1;
+    obCanvas.strokeStyle = 'red';
+    obCanvas.stroke();
+	
+	obCanvas.fillStyle = "rgba(0, 0, 200, 0.5)";  	
+    obCanvas.fillRect(100, 75, 100, 100);
+}
+
+
+</script>
+</head>
+
+<body onLoad="line()">
+<body onLoad="circle()">
+
+<canvas id="line"></canvas>
+<canvas id="circle"></canvas>
+
+</body>
+</html>
