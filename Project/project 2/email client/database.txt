@@ -1,0 +1,15 @@
+﻿
+//users
+﻿CREATE TABLE users (id INT UNSIGNED NOT NULL AUTO_INCREMENT, username VARCHAR(100) NOT NULL, name VARCHAR(100), surname VARCHAR(100), email VARCHAR(100), password CHAR(60) NOT NULL, PRIMARY KEY (id), UNIQUE INDEX id_UNIQUE (id ASC));
+
+//letters
+CREATE TABLE letters (id INT UNSIGNED NOT NULL AUTO_INCREMENT, author_id INT, h2 TEXT, date DATE, ps_to_file TEXT, PRIMARY KEY (id), UNIQUE INDEX id_UNIQUE (id ASC));
+
+//send_user
+CREATE TABLE send_user (id_letter INT, id_user INT);
+
+//copy_user
+CREATE TABLE copy_user (id_letter INT, id_user INT);
+
+//templates
+CREATE TABLE templates (id INT, label CHAR(60), ps_to_file TEXT);
