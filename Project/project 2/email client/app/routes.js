@@ -41,7 +41,7 @@ module.exports = function(app, passport, fs) {
 	});
 
 	app.get('/emails', isLoggedIn, function(req, res) {
-		var letter = fs.readFileSync('letters/testletter.txt', 'utf8');
+		var letter = fs.readFileSync('letters/IP5x19nn.ССС', 'utf8');
 		console.log(letter);
 		res.render('emails.ejs', {
 			user : req.user,
