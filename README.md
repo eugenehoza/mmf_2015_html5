@@ -1,3 +1,5 @@
+Добавил распределение работ по участникам. См. задачу Project
+
 Hello world. This is repository for HTML cource
 
 В случае проблем с репозиторием можете искать меня в скайпе evergreen_gozaevgeny
