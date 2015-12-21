@@ -2,42 +2,56 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Как нарисовать линию в HTML5 (Canvas)</title>
-<script>
-
-function line()
-{
-    var canvas = document.getElementById('line');
-    var obCanvas = canvas.getContext('2d');
-    
-    obCanvas.beginPath();
-    obCanvas.lineWidth = 2;
-    obCanvas.strokeStyle = 'red';
-    obCanvas.moveTo(10, 10);
-    obCanvas.lineTo(290, 140);
-    obCanvas.stroke();
-	
-	obCanvas.beginPath();
-    obCanvas.arc(150, 75, 50, 0, 2*Math.PI, false);
-    obCanvas.fillStyle = 'red';
-    obCanvas.fill();
-    obCanvas.lineWidth = 1;
-    obCanvas.strokeStyle = 'red';
-    obCanvas.stroke();
-	
-	obCanvas.fillStyle = "rgba(0, 0, 200, 0.5)";  	
-    obCanvas.fillRect(100, 75, 100, 100);
-}
-
-
-</script>
+    <title>HTML5 (Canvas)</title>
 </head>
+<body onLoad="draw()">
+    <canvas id="canvas_mmf" style="border: 1px solid red"></canvas>
+        <script type="text/javascript">
+            var canvas = document.getElementById('canvas_mmf');
+            var obCanvas = canvas.getContext('2d');
 
-<body onLoad="line()">
-<body onLoad="circle()">
+            function draw(){
+                //drow a line
+                obCanvas.beginPath();
+                obCanvas.lineWidth = 2;
+                obCanvas.strokeStyle = 'red';
+                obCanvas.moveTo(10, 10);
+                obCanvas.lineTo(290, 140);
+                obCanvas.stroke();
 
-<canvas id="line"></canvas>
-<canvas id="circle"></canvas>
+                //circle
+                obCanvas.beginPath();
+                obCanvas.arc(150, 75, 50, 0, 2*Math.PI, false);
+                obCanvas.fillStyle = 'red';
+                obCanvas.fill();
+                obCanvas.lineWidth = 1;
+                obCanvas.strokeStyle = 'red';
+                obCanvas.stroke();
 
+                //rectangle
+                obCanvas.fillStyle = "rgba(0, 0, 200, 0.5)";
+                obCanvas.fillRect(100, 75, 100, 100);
+            }
+
+            function addOnWheel(elem, handler) {
+                     if (elem.addEventListener) {
+                if ('onwheel' in document) {
+                  elem.addEventListener("wheel", handler);
+                }
+              }
+            }
+
+            var scale = 1;
+
+            addOnWheel(canvas_mmf, function(e) {
+            var delta = e.deltaY || e.detail || e.wheelDelta;
+
+            if (delta > 0) scale += 0.05;
+            else scale -= 0.05;
+
+            canvas_mmf.style.transform = canvas_mmf.style.WebkitTransform = canvas_mmf.style.MsTransform = 'scale(' + scale + ')';
+            e.preventDefault();
+    });
+        </script>
 </body>
 </html>
