@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Событие onmousemove</title>
+
+</head>
+<body>
+<div id="coords">&nbsp;</div>
+	<canvas id="CanvasBox" height="512" width="512" style="border:1px solid #000000;"></canvas>
+	<script>
+	var _canvas = null;
+	var _context = null;
+
+	
+	function initCanvas1() {
+		_canvas = document.createElement("canvas");
+		_canvas.width = 512;
+		_canvas.height = 512;
+		_context = _canvas.getContext('2d');
+		document.body.appendChild(_canvas);
+		
+		_onmousemove = mouseCoords;
+	}
+	function initCanvas2() {
+		_canvas = document.getElementById('CanvasBox');
+		_context = _canvas.getContext('2d');
+		onmousemove = mouseCoords;
+	}
+
+	function draw(x,y) {
+		_context.lineTo(x,y);
+		_context.stroke();
+	}
+	function mouseCoords(e) {
+		// Для браузера IE
+		if (document.all)  {
+			x = event.x + document.body.scrollLeft;
+			y = event.y + document.body.scrollTop;
+		// Для остальных браузеров
+		} else {
+			var rect = _canvas.getBoundingClientRect();
+			x = e.clientX - rect.left; // Координата X курсора
+			y = e.clientY - rect.top; // Координата Y курсора
+		}
+		draw(x,y);
+	}
+	
+	function main() {
+		initCanvas2();
+	}
+	
+	main();
+	</script>
+</body>
+</html>
