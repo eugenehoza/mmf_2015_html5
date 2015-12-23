@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<div id="canvas">
+<canvas id="myCanvas" width="300" height="300"></canvas>
+</div>
+
+<body onload="draw()">
+<style>
+    canvas {
+        border:2px solid #404040;
+    }
+</style>
+<script type="text/javascript">
+
+    var div_canvas = document.getElementById("canvas");
+    var canvas;
+
+    function draw(param){
+       canvas = document.getElementById("myCanvas");
+
+        if(canvas== undefined){
+            canvas = document.createElement('canvas');
+            div_canvas.appendChild(canvas);
+            canvas.setAttribute("id","myCanvas");
+            canvas.setAttribute("width","300");
+            canvas.setAttribute("height","300");
+        }
+
+        var cxt=canvas.getContext("2d");
+        var centerX = 150;
+        var centerY = 150;
+
+        if(param == undefined){
+            param = 5;
+        }
+        cxt.moveTo(centerX, centerY);
+        var STEPS_PER_ROTATION = 60;
+        var increment = 1*Math.PI/STEPS_PER_ROTATION;
+        var theta = increment;
+
+
+        while( theta < 30*Math.PI) {
+            var newX = centerX + theta *param* Math.cos(theta);
+            var newY = centerY + theta *param* Math.sin(theta);
+            cxt.lineTo(newX, newY);
+            theta = theta + increment;
+        }
+        cxt.stroke();
+    }
+
+
+    function redrawSpiral(){
+        var c=document.getElementById("myCanvas");
+        var newParam= document.getElementById("spiral-param").value;
+        div_canvas.removeChild(c);
+        draw(newParam)
+    }
+
+</script>
+
+<table>
+    <tr>
+        <td>
+            <input id="spiral-param" type="search" placeholder="enter param value" value="">
+        </td>
+        <td>
+            <button onclick="redrawSpiral()" >DRAW</button>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+
+
+</html>
