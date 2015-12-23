@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Buttons</title>
+    <script type="text/javascript" src="buttonBehavior.js"></script>
+</head>
+	<body>
+		<table id = "table">	
+			<tbody>
+			  <tr> <td>Value1</td></tr>
+			  <tr> <td>Value2</td></tr>
+			  <tr> <td>Value3</td></tr>
+		    </tbody>
+		</table>
+		<button onclick="removeLastRow()" type="button">Remove last row!</button>
+		<p>Button below will remove row with text in input.</p>
+		<input  type="text" id="rowToRemove"> </input>
+		<button onclick="removeRowUsingText()" type="button">Remove row!</button>
+		<p>Button below will add new row with text in input.</p>
+		<input  type="text" id="rowToAdd"> </input>
+		<button onclick="addRow()" type="button">Add row!</button>
+    </body>
+</html>
