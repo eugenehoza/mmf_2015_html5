@@ -1,0 +1,34 @@
+html, body { height: 100%; font: 14px/16px Arial, Helvetica, sans-serif; background: #EAEAE7;}
+.wrp { width: 85%; min-width: 960px; margin: 0 auto; background: #fff; }
+.page { position: relative; min-height: 100%; }
+.fon-header, .fon-footer { position: relative; height: 160px; background: #7A6F90; }
+.fon-footer { margin-top: -160px; }
+.content { overflow: hidden; margin: 10px 0; }
+.right-side { height: 100px; margin-left: 270px; /*background: blue;*/ }
+.push-footer { padding-bottom: 160px; }
+
+/*navigation*/
+nav { float: left; width: 270px; border-right: 1px solid #C0B8DA; }
+nav a { display: block; margin: 10px 0 10px 10px; padding: 5px 15px; color: #33539F; text-align: right; }
+nav a:hover { background: #ccc;}
+
+/*header*/
+.logo { display: block; position: absolute; left: 5px; top: 5px; width: 150px; height: 150px; background: #CCC; }
+header h1 { position: absolute; left: 165px; top: 20px; width: 500px; font: 1.6em/1.1em Georgia, Times New Roman, serif; text-transform: uppercase; word-spacing: 5px; color: #fff; }
+header ul { position: absolute; right: 200px; }
+header ul li { float: left; margin: 0 5px;}
+header ul li a { font-size: 0.8em; color: #B1AEC6; }
+header ul li a:hover { color: #fff; }
+header img { position: absolute; right: 0; }
+
+/*HTML5*/
+.fon-header, .fon-footer { box-shadow: 0 0 3px 3px #817181; }
+.fon-header {
+	border-radius: 0 0 10px 10px;
+}
+.fon-footer {
+	border-radius: 10px 10px 0 0;
+}
+nav a {
+	border-radius: 5px 0 0 5px;
+}
