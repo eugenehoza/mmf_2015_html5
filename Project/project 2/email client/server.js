@@ -11,7 +11,8 @@ var flash    = require('connect-flash');
 
 require('./config/passport')(passport);
 
-app.use(express.static(__dirname + '/public'));
+//	Подгрузка статичных элементов страниц.
+app.use(express.static(__dirname + '/static'));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({

@@ -1,9 +1,12 @@
+var model = {};
+require("./dummy_model.js")(model);
+
 module.exports = function(app, passport, fs) {
 
 	app.get('/', function(req, res) {
 		res.render('index.ejs');
 	});
-
+	
 	app.get('/login', function(req, res) {
 		res.render('login.ejs', { message: req.flash('loginMessage') });
 	});
@@ -39,16 +42,18 @@ module.exports = function(app, passport, fs) {
 			user : req.user
 		});
 	});
-
+	
 	app.get('/emails', isLoggedIn, function(req, res) {
-		var letter = fs.readFileSync('letters/IP5x19nn.ССС', 'utf8');
-		console.log(letter);
+		var letters = model.getLetters(req.user);
+		if (typeof letters !== typeof []) {
+			throw new TypeError();
+		}
 		res.render('emails.ejs', {
 			user : req.user,
-			letter : letter
+			letters : letters
 		});
 	});
-
+	
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
