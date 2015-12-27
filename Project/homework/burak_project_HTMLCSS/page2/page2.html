@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style2.css">
+		<link rel="stylesheet" type="text/css" href="tcal.css">
+		<style>
+		@font-face {
+			font-family: HelveticaNeueCyr-Thin;
+			src: url(fonts/HelveticaNeueCyr-Thin.otf);
+		}
+		body{
+				background: rgba(240,240,240,1);
+		}
+		</style>
+		<script type="text/javascript" src="tcal.js"></script>
+		<title>Вторая страница</title>
+	</head>
+	<body>
+
+		<header>
+			<div class="logo"></div>
+			<form>
+				<input type="text" value="" class="vetka" placeholder="Ветка">
+			</form>
+		</header>
+
+		<section class="a">
+			<nav>
+				<form action="" method="post" onsubmit="return false;">
+					<!--Пример шаблона. Настройка зависит от необходимых условий-->
+					<input class="butf" type="submit" onclick="document.getElementById('text1').value='.h1 [название ветки] [номер письма] [dd].[имя пользователя] [год].[месяц].[день] [список получателей]'; document.getElementById('text2').value='.h2 Краткое описание'; document.getElementById('text').value='Введите текст сообщения'" value="Разработчик">
+					<br>
+					<input class="butf" type="submit" onclick="document.getElementById('text1').value='.h1 [название ветки] [номер письма] [vv].[имя пользователя] [год].[месяц].[день] [список получателей]'; document.getElementById('text2').value='.h2 Краткое описание'; document.getElementById('text').value='Введите текст сообщения'" value="Тестировщик">
+					<br>
+					<input class="butf" type="submit" onclick="document.getElementById('text1').value='.h1 [название ветки] [номер письма] [cn].[имя пользователя] [год].[месяц].[день] [список получателей]'; document.getElementById('text2').value='.h2 Краткое описание'; document.getElementById('text').value='Введите текст сообщения'" value="Старт. Письмо">
+				</form>
+			</nav>
+
+			<div class="twobut">
+				<form action="" method="post">
+					<input class="butf" type="submit" value="Отправить">
+					<br>
+					<input class="butf" type="submit" value="Сохранить">
+				</form>
+			</div>
+		</section>
+
+		<section class="b">
+			<form action="" method="post">
+				<textarea name="text1" id="text1" type="text" placeholder="Получатель"></textarea>
+				<textarea name="text2" id="text2" type="text" placeholder="Краткое описание"></textarea>
+				<form enctype="multipart/form-data" method="post">
+					<div class="text3">Прикрепить файл</div>
+					<div class="fileform">
+					<div class="selectbutton">Обзор</div>
+					<input id="upload" type="file" name="upload">
+					</div>
+				</form>
+				<textarea name="text" id="text" type="text" placeholder="Текст сообщения"></textarea>
+			</form>
+		</section>
+		<div class="footer">
+			<p class="copyright">ММФ 2011—2015<br>Все права защищены</p>
+		</div>
+	</body>
+</html>

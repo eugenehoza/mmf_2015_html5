@@ -1,0 +1,111 @@
+*{
+  padding: 0;
+  margin: 0 auto;
+  font-size: 28px;
+  font-family: HelveticaNeueCyr-Thin, Corbel, Tahoma;
+}
+.container{
+  width: 750px;
+  height: 825px;
+  padding-top: 100px;
+  color: #333;
+  font-size: 28px;
+  font-family: Panton;
+  position: relative;
+  background: none;
+}
+h1{
+  font-size: 48px;
+}
+.form1{
+  padding-top:75px;
+}
+.form-control{
+  float: left;
+  width: 550px;
+  height: 50px;
+  padding-left: 20px;
+  color: #333;
+  background: rgba(240,240,240,1);
+  border: none;
+  font-size: 20px;
+  transition: all 0.15s;
+  box-sizing: border-box;
+  position: relative;
+}
+.form-control:hover{
+  background: rgba(255,255,255,1);
+  color: #333;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
+}
+.form-control:focus{
+  padding-left: 60px;
+  background: url(img/icon2_2.png) 10px 0px rgba(255,255,255,1) no-repeat;
+  background-size: 50px;
+  border: none;
+}
+.btn{
+  width: 200px;
+  height: 100px;
+  color: white;
+  font-size: 32px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: none;
+  background: #df2121;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover{
+  font-size: 0;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: 0.35s;
+  -moz-transition: 0.35s;
+  -o-transition: 0.35s;
+  transition: 0.35s;
+  background-color: #df2121;
+/*  background: url(icon2_back.png) -200px #505050 no-repeat;
+  background-size: 200px 100px; */
+
+}
+.btn:hover:before{
+  position: absolute;
+  content: '';
+  visibility: visible;
+  width: 200px;
+  height: 100px;
+  left:0px;
+  top:-0;
+  -webkit-transition: 0.35s;
+  -moz-transition: 0.35s;
+  -o-transition: 0.35s;
+  transition: 0.35s;
+  background-image: url(img/icon2.png);
+  background-position: 50px 0px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-color: #df2121;
+}
+.btn:active:before{
+  visibility: visible;
+  -webkit-transition: 0.08s;
+  -moz-transition: 0.08s;
+  -o-transition: 0.08s;
+  transition: 0.08s;
+  transform: rotateZ(-90deg);
+}
+.footer1{
+  text-align: right;
+  padding-top: 50px;
+}
+.link1{
+  color: #333;
+}
