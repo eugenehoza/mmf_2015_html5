@@ -1,3 +1,5 @@
+Зачет 28.12 в 16.00. Собираемся возле 433.
+
 Добавил распределение работ по участникам. См. задачу Project
 
 Hello world. This is repository for HTML cource

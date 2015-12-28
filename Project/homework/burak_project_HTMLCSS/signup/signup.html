@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Регистрация</title>
+	<link rel="stylesheet" href="styleSU.css">
+
+	<style>
+	@font-face {
+ 		font-family: HelveticaNeueCyr-Thin;
+ 		src: url(fonts/HelveticaNeueCyr-Thin.otf);
+	}
+	body{
+		  background: rgba(240,240,240,1);
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+	<div class="header1"><h1><span class="fa fa-sign-in"></span>Создайте новый аккаунт</h1></div>
+
+	<!--<% if (message.length > 0) { %>-->
+		<div class="alert alert-danger"><!--<%= message %>--></div>
+	<!--<% } %>-->
+
+	<form class="form1" action="/signup" method="post">
+		<div class="form-group">
+			<!--<label>Username</label>-->
+			<input type="text" class="form-control" name="username" placeholder="Введите имя">
+		</div>
+		<div class="form-group">
+			<!--<label>Password</label>-->
+			<input type="password" class="form-control" name="password" placeholder="Введите пароль">
+		</div>
+
+		<button type="submit" class="btn btn-warning btn-lg">Войти</button>
+	</form>
+
+	<!--<hr>-->
+	<div class="footer1">
+		<p>Уже есть аккаунт? <a class="link1" href="/login">Войдите</a></p>
+		<p>Или перейдите на <a class="link1" href="/">Главную</a></p>
+	</div>
+</div>
+</div>
+</body>
+</html>

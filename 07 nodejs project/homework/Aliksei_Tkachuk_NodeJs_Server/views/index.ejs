@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<textarea id="text" disabled = "true" >  <%=text%></textarea>
+
+<button id = 'edit' class='myButton' onclick="unlockTextArea()">
+            Edit
+ </button>
+
+<button id = 'save' class='myButton' onclick="save()">
+    Save
+</button>
+
+<% block('header', "<h1>Task Node.js Server.</h1>") -%>

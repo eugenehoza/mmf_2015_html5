@@ -2,22 +2,76 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>E-Mail Client</title>
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="static/tcal.css">
+		<script type="text/javascript" src="static/tcal.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="static/main.js"></script>
+		<title>Почта</title>
 	</head>
 	<body>
 		<header>
-			<h1>Logo</h1>
-			<style>
-				body 		{ padding-left:80px; }
-			</style>
+			<h1>Logo (Hello, <%=user.name%>)</h1>
+			<form>
+			<input type="text" value="поиск" class="search">
+				<div class="k">
+					<select>
+						<option value=".h2">.h2</option>
+						<option value="ветка">ветка</option>
+					</select>
+
+				</div>
+				<br>
+				
+					<select >
+						<option value=".h2"></option>
+						<option value=".h2">Все</option>
+						<option value=".h2">Прочитанные</option>
+						<option value="ветка">непрочитанные</option>
+					</select>
+				
+				<input class="tt" type="button" value="Обновить">
+				<input type="button" value="удалить">
+			</form>
 		</header>
-
-		Hello <%=user.name%>
-
-		<p><%=letter%></p>
-
+		<section class="a">
+			<nav>
+				<ul>
+					<li><a href="" class="np">написать</a></li>
+					<li><a href="">Входящие</a></li>
+					<li><a href="">Отправленные</a></li>
+					<li><a href="">Черновики</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section class="b">
+			<div  class="cont">
+				<% for(var i=0; i<letters.length; i++) {%>
+					<div class="t1"> 
+						<ul>
+							<li class="f"><input type="checkbox"></li>
+							<li class="f1">ветка</li>
+							<li class="f2"><h2><%=letters[i].h2%></h2></li>
+							<li class="f3">name</li>
+							<li class="f4">data</li>
+							<li class="f5" style="margin-left: 12px;"><input type="text" name="date" class="tcal" value="" /></li>
+						</ul>
+					</div>
+					<br>				
+					<div class="t2">
+						<ul>
+							<li class="r-0"></li>
+							<li class="r"><input type="checkbox"></li>
+							<li class="r1">Тема</li>
+							<li class="r2"><%=letters[i].sender%></li>
+							<li class="r3"><%=letters[i].date%></li>
+							<li class="r4"><input type="text" name="date" class="tcal" value="" /><%=letters[i].ps_to_file%></li>
+						</ul>
+					</div>
+					<br>
+				<% } %>
+			</div>
+		</section>
 		<footer></footer>
 	</body>
 </html>
