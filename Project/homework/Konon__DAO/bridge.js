@@ -1,3 +1,5 @@
+function brigde(){
+
 var mysql = require('mysql');
 var Sync = require('sync');
 var letters = [];
@@ -7,28 +9,7 @@ var connection = mysql.createConnection({
 	password : 'root'
 });
 
-
-
-
 connection.connect();
-
-
-removeLetterByAdressTo('adressTo2');
-createLetter(Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100,'blablabla', '12/28/2015','12/28/2015','SOMETHING', 'dasd','adsda');
-getLetters(1);
-
-console.log(letters);
-
-Sync(function(){
-	return getLetters.sync(null, 3);;
-}, function(err, result){ // <-- standard callback
-
-    if (err) console.error(err); // something went wrong
-
-    // The result which was returned from Sync body function
-    console.log(result);
-});
-
 
 function getLetters(count){
 	letters = [];
@@ -161,6 +142,13 @@ function changeTextInLetter(text, newText){
 		});
 }
 
+function _createLetter(sendTo, desctiption, text){
+	connection.query('insert into letters.letters (id, sendTo, desctiption, text) values ('+Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100+', "'+sendTo+'", '+desctiption+' , '+text+'");' , function (err, result){
+		if (err) throw err; 
+		console.log("Letter has been added to database.");
+		});
+}
+
 function setLetters(value) {
   letters = [];
   letters = value;
@@ -182,4 +170,4 @@ connection.end(function(err){
 console.log('Connection closed');
 });
 
-
+}
