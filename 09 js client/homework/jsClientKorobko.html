@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+
+    var input ;
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function getEmail(){
+        input = document.getElementById("email");
+        return input.value;
+    }
+
+    function runValidation(){
+        if(validateEmail(getEmail())){
+            input.style.backgroundColor = "#aaf2aa";
+            console.log("good")
+        }
+        else {
+            input.style.backgroundColor = "#ffb3b3";
+            console.log("bad")
+        }
+    }
+
+</script>
+
+<style>
+
+    input{
+        padding: 13px;
+        border: solid 2px #E5E5E5;
+        outline: 0;
+        font: normal 13px/100% Verdana, Tahoma, sans-serif;
+        width: 367px;
+        box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        text-shadow: 2px 2px 2px rgba(78, 93, 110, 0.65);
+    }
+</style>
+
+<head>
+    <meta charset=utf-8" />
+    <title>HTML Document</title>
+</head>
+<h1>Js Client </h1>
+<body>
+    <input id="email"   name="email"  placeholder="Enter you Email" oninput="runValidation()">
+</body>
+
+</html>

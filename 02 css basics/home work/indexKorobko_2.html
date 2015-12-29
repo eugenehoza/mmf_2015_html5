@@ -1,0 +1,24 @@
+﻿<html>
+	<head>
+		<title>Пример веб-страницы</title>
+		<style type="text/css">
+			h1 {color:#0080FF;} /* Селектор по имени тега */
+			#b1 {border:1px solid #ccc;} /* Селектор по ID */
+			.b2 {border:1px dashed #0080FF;} /* Селектор по class */
+			.b2 > span {font-weight:bold;} /* Дочерний селектор */
+			.b2 + div {border:1px dotted green;} /* Соседний селектор */
+			body div {width:150px; margin: 2px;} /* Контекстный селектор */
+			span[title] {text-decoration:underline;cursor:pointer;} /* Селектор атрибутов */
+			a:hover {color:#ff0000;} /* Селектор псевдокласса */
+			* {font-family: Arial;} /* Универсальный селектор */
+			div:first-letter {font-size:20px; color: #0080FF;} /* Селектор псевдоэлемента */
+		</style>
+	</head>
+	<body>
+		<h1>Заголовок</h1>
+		<div id="b1">Блок с заданным ID</div>
+		<div class="b2">Блок с заданным <span>Class</span></div>
+		<div>Блок, идущий после блока с заданным <span title="Class">Class</span></div>
+		<a href="">Ссылка</a>
+	</body>
+</html>

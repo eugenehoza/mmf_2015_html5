@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+    canvas{
+        border-color: yellow;
+        border-width: medium;
+    }
+</style>
+
+<head>
+
+</head>
+
+<body style="margin:0">
+<canvas id="canvas" width="400" height="300">
+</canvas>
+
+<script>
+    var canvas = document.createElement('canvas'),
+            ctx = canvas.getContext('2d'),
+            circle;
+    document.body.appendChild(canvas);
+    canvas.width = 500;
+    canvas.height = 500;
+
+    function Circle(x, y, radius) {
+        circle = new Path2D();
+        circle.arc(x, y, radius, 0, Math.PI * 2);
+        return circle;
+    }
+
+    function init() {
+        ctx.strokeStyle = 'white';
+        for (var i = 0; i < 1; i++) {
+            circle = Circle((Math.random() * (canvas.width - 40)) + 20, (Math.random() * (canvas.height - 40)) + 20, 20);
+            ctx.fill(circle, "nonzero");
+            ctx.stroke(circle, "nonzero");
+        }
+    }
+
+    function clickHandler(e) {
+
+        var r = canvas.getBoundingClientRect(),
+                x = e.clientX - r.left,
+                y = e.clientY - r.top
+
+        if (ctx.isPointInPath(circle, x, y, 'nonzero')) {
+            init()
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fill(circle, "nonzero")
+            ctx.stroke(circle, "nonzero");
+
+    }
+    canvas.addEventListener('click', clickHandler, false);
+    init();
+
+</script>
+</body>
+
+</html>

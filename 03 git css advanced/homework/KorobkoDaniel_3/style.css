@@ -1,0 +1,30 @@
+body
+{
+	font-family: Impact, Ariel, sans-serif;
+	background: #000;
+	color: #fff;
+	font-size: 17px;
+	padding: 0px;
+	margin: 0px;
+}
+#mmf
+{
+	margin-left:20px;
+}
+.retford
+{
+	float: left;
+	margin-top: 13px;
+}
+.retford a, .retford a.karabkasan, .retford div.karabkasan
+{
+	display: block;
+	padding: 10px 10px 15px 10px;
+	
+}
+#bps
+{
+	width: 750px;
+	height: 50px;
+	background: #000 url(navbg.png) no-repeat;
+}
